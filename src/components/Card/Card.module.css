@@ -1,0 +1,96 @@
+.padre{
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color:rgb(255, 255, 255);
+    border-radius: 5% 5% 5% 5%;
+    margin: 20px;
+    width: 330px;
+    height: 700px;
+}
+.button{
+    background-color: transparent;
+    background-image: url(https://images.vexels.com/media/users/3/155481/isolated/preview/622b56964a549b765dcaa8652b08ea87-icono-de-garabato-de-marca-x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 16px;
+    order: 1;
+    border: 0px;
+    border-radius: 30%;
+    transition: transform 0.2s;
+}
+.button:hover{
+    cursor: pointer;
+    background-color: rgb(245, 245, 245);
+}
+.button:active{
+    cursor: pointer;
+    transform: scale(0.70);
+}
+.name{
+    order: 2;
+    white-space: pre-wrap;
+    text-align: center;
+}
+.contenedor{
+    display: flex;
+    order: 3;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 5% 5% 5% 5% ;
+    border: 1px solid rgb(199, 199, 199);
+    width: 296px;
+}
+.image{
+    order: 1;
+    border-radius: 5% 5% 0 0;
+    margin-left: -2px;
+    margin-top: -2px;
+}
+.status{
+    order: 2;
+    text-overflow: ellipsis;
+    line-height: 1;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+}
+.species{
+    order: 3;
+    text-overflow: ellipsis;
+    line-height: 1;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+}
+.gender{
+    order: 4;
+    text-overflow: ellipsis;
+    line-height: 1;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+}
+.origin{
+    order: 7;
+    text-overflow: ellipsis;
+    max-width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    justify-content: center;
+    align-self: center;
+}
