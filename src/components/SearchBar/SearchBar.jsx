@@ -1,6 +1,6 @@
 import style from './SearchBar.module.css'
+import RanCard from '../NavBar/RanCard/RanCard'
 import { useState } from 'react'
-import {RMI, RML} from './ficheros'
 
 export default function SearchBar(props) {
    const [id, setID] = useState('')
@@ -8,15 +8,10 @@ export default function SearchBar(props) {
       setID(event.target.value)
    }
    return (
-      <>
-         <div className={style.logo}>
-            <img className={style.logoRyM} src={RMI}/>
-            <img className={style.logoNombre} src={RML}/>
-         </div>
          <div className={style.buscador}>
+            <RanCard className={style.ranCard} props = {props}/>
             <input className={style.searcher} type='text' onChange={handleChange}/>
             <button className={style.buttonSearch} onClick={()=>{props.onSearch(id)}}/>
          </div>
-      </>
    );
 }

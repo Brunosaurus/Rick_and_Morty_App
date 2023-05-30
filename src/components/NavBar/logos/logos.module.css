@@ -1,0 +1,21 @@
+.logo{
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    overflow: hidden;
+    margin-left: 60px;
+    height: 60px;
+    width: 500px;
+}
+.logoRyM{
+    display: flex;
+    align-self: center;
+    width: 80px; 
+    height: 90px;
+}
+.logoNombre{
+    display: flex;
+    align-self: center;
+    width: 180px;
+    height: 47px;
+}
