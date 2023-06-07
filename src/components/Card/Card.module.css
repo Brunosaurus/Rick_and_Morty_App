@@ -36,7 +36,7 @@
 }
 .button:active{
     cursor: pointer;
-    transform: scale(0.70);
+    transform: scale(0.80);
 }
 .name{
     order: 2;
@@ -58,16 +58,24 @@
     margin-left: -2px;
     margin-top: -2px;
 }
-.status{
+.image2{    
     order: 2;
-    text-overflow: ellipsis;
-    line-height: 1;
-    max-width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-align: center;
+    border-radius: 50%;
+    background-image: url('https://icon-library.com/images/information-icon-white/information-icon-white-4.jpg');
+    margin-left: 5px;
+    margin-top: -38px;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s;
 }
-.species{
+.image2:hover{
+    cursor: pointer;
+}
+.image2:active{
+    cursor: pointer;
+    transform: scale(0.80);
+}
+.status{
     order: 3;
     text-overflow: ellipsis;
     line-height: 1;
@@ -76,7 +84,7 @@
     overflow: hidden;
     text-align: center;
 }
-.gender{
+.species{
     order: 4;
     text-overflow: ellipsis;
     line-height: 1;
@@ -85,8 +93,17 @@
     overflow: hidden;
     text-align: center;
 }
+.gender{
+    order: 5;
+    text-overflow: ellipsis;
+    line-height: 1;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+}
 .origin{
-    order: 7;
+    order: 6;
     text-overflow: ellipsis;
     max-width: 80%;
     white-space: nowrap;

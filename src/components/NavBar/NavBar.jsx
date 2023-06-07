@@ -1,6 +1,6 @@
 import SearchBar from "../SearchBar/SearchBar"
 import style from './NavBar.module.css'
-import Logos from "./logos/logos";
+import Logos from "./logos/logos"
 
 export default function NavBar(props) {
     return(

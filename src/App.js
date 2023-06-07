@@ -1,8 +1,12 @@
-import axios from 'axios'
-import React, { useState } from 'react';
+import axios from 'axios';
 import style from './App.module.css';
-import Cards from './components/Cards/Cards.jsx';
 import NavBar from './components/NavBar/NavBar';
+import Cards from './components/Cards/Cards';
+import About from './views/About/About';
+import Details from './views/Details/Details';
+import NotFound from './views/NotFound/NotFound';
+import React, { useState } from 'react';
+import { Routes, Route, Navigate, useParams } from 'react-router-dom';
 
 function App() {
 
@@ -35,10 +39,33 @@ function App() {
       }
    }
 
+   function isNumberInRange(number) {
+      const MIN_RANGE = 1;
+      const MAX_RANGE = 826;
+      return Number(number) >= MIN_RANGE && Number(number) <= MAX_RANGE;
+   }
+   function NumberRoute() {
+      const { id } = useParams();
+      if (isNumberInRange(id)) {
+         return <Details />;
+      } else {
+         return <Navigate to="/4004" />;
+      }
+   }
+
    return (
+
       <div className={style.app}>
          <NavBar onSearch = {onSearch}/>
-         <Cards characters={characters} onClose={onClose}/>
+         <Routes>
+            <Route path='/' element={<Cards characters={characters} onClose={onClose}/>}/>
+            <Route path='/About_Me' element={<About/>}/>
+            <Route path="/:id" element={<NumberRoute />} />
+            {/* Ruta para el error 404 */}
+            <Route path="/4004" element={<NotFound />} />
+            {/* Ruta de captura de errores para cualquier otra URL */}
+            <Route path="*" element={<Navigate to="/4004" />} />
+         </Routes>
       </div>
    );
 }
