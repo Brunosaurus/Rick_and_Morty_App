@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import style from "./Details.module.css"
 import axios from "axios"
 
 export default function Details() {
@@ -10,14 +11,22 @@ export default function Details() {
     }, [])
 
     return(
-        <div>
-            <h1>{characters.id}</h1>
-            <h1>{characters.name}</h1>
-            <h1>{characters.status}</h1>
-            <h1>{characters.species}</h1>
-            <h1>{characters.gender}</h1>
-            <h1>{characters.origin?.name}</h1>
-            <img src={characters.image}/>
+        <div className={style.container}>
+
+            <div className={style.divSon}>
+                <div className={style.information}>
+                    <h3 className={style.id}>ID | {characters.id}</h3>
+                    <h1 className={style.name}>{characters.name}</h1>
+                    <h3 className={style.status}>Status | {characters.status}</h3>
+                    <h3 className={style.species}>Specie | {characters.species}</h3>
+                    <h3 className={style.gender}>Gender | {characters.gender}</h3>
+                    <h3 className={style.origin}>Origin | {characters.origin?.name}</h3>
+                </div>
+                <div className={style.imageDiv}>
+                    <img src={characters.image} className={style.image}/>
+                </div>
+            </div>
+
         </div>
     )
 }

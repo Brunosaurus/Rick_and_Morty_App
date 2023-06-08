@@ -12,7 +12,7 @@
 }
 .button{
     background-color: transparent;
-    background-image: url(https://images.vexels.com/media/users/3/155481/isolated/preview/622b56964a549b765dcaa8652b08ea87-icono-de-garabato-de-marca-x.png);
+    background-image: url(https://cdn-icons-png.flaticon.com/512/59/59836.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -62,6 +62,10 @@
     order: 2;
     border-radius: 50%;
     background-image: url('https://icon-library.com/images/information-icon-white/information-icon-white-4.jpg');
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
     margin-left: 5px;
     margin-top: -38px;
     width: 30px;

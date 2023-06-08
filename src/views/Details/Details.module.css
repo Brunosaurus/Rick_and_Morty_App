@@ -1,0 +1,66 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 80px);
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+.divSon{
+    display: flex;
+    background-color: white;
+    width: 800px;
+    height: 500px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+}
+.information{
+    margin-left: 20px;
+    display: flex;
+    width: 330px;
+    height: 450px;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    border: 1px solid rgb(194, 194, 194);
+    border-radius: 20px;
+}
+.imageDiv{
+    margin-right: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    align-self: flex-end;
+    justify-content: center;
+    height: 350px;
+    width: 350px;
+    border: 1px solid rgb(194, 194, 194);
+    border-radius: 20px;
+}
+.image{
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    width: 18.75rem;
+    height: 18.75rem;
+    border-radius: 0.625rem;
+}
+.name{
+    order: 1;
+}
+.status{
+    order: 2;
+}
+.species{
+    order: 3;
+}
+.gender{
+    order: 4;
+}
+.origin{
+    order: 5;
+}
+.id{
+    order: 6;
+}
