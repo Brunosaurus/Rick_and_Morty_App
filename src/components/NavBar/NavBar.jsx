@@ -6,7 +6,7 @@ export default function NavBar(props) {
     return(
         <div className={style.navBar}>
             <Logos/>
-            <SearchBar onSearch={(props.onSearch)}/>
+            <SearchBar onSearch={(props.onSearch)} logout={props.logout}/>
         </div>
     );
 }

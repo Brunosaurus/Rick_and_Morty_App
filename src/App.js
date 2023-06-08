@@ -6,7 +6,8 @@ import About from './views/About/About';
 import Details from './views/Details/Details';
 import NotFound from './views/NotFound/NotFound';
 import React, { useState } from 'react';
-import { Routes, Route, Navigate, useParams } from 'react-router-dom';
+import { Routes, Route, Navigate, useParams, useLocation } from 'react-router-dom';
+import Forms from './components/Form/Form';
 
 function App() {
 
@@ -52,22 +53,57 @@ function App() {
          return <Navigate to="/4004" />;
       }
    }
+   
+   function IsLogged() {
+      if(useLocation().pathname !== '/'){
+         return <NavBar onSearch={onSearch} logout={logout}/>
+   }
+   }
+   const [access, setAccess] = useState(false);
+   const EMAIL = 'a@a.aaa';
+   const PASSWORD = 'abcde1';
 
+   function login(email, password) {
+      console.log(password === PASSWORD);
+      if (password === PASSWORD && email === EMAIL) {
+         alert('¡Bienvenido!')
+         setAccess(true);
+         return <Navigate to="/home" />;
+      }
+   }
+   function logout() {
+      setAccess(false);
+      return <Navigate to="/" />;
+   }
+   
    return (
 
       <div className={style.app}>
-         <NavBar onSearch = {onSearch}/>
+         {IsLogged()}
          <Routes>
-            <Route path='/' element={<Cards characters={characters} onClose={onClose}/>}/>
-            <Route path='/About_Me' element={<About/>}/>
-            <Route path="/:id" element={<NumberRoute />} />
-            {/* Ruta para el error 404 */}
-            <Route path="/4004" element={<NotFound />} />
-            {/* Ruta de captura de errores para cualquier otra URL */}
-            <Route path="*" element={<Navigate to="/4004" />} />
+            { access ? (
+               <>
+                  <Route path='/' element={<Navigate to='/home'/>}/>
+                  <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
+                  <Route path='/About_Me' element={<About/>}/>
+                  {/* Redirige a la funcion Number Route que valida si el id de la URL esta dentro del rango permitido */}
+                  <Route path="/:id" element={<NumberRoute />} />
+                  {/* Ruta para el error 404 */}
+                  <Route path="/4004" element={<NotFound />} />
+                  {/* Ruta de captura de errores para cualquier otra URL */}
+                  <Route path="*" element={<Navigate to="/4004" />} />
+               </>
+            ) : (
+               <>
+                  <Route path='/' element={access ? <Navigate to='/home'/> : <Forms login={login}/>}/>
+                  <Route path='*' element={<Navigate to='/'/>}/>
+               </>
+            )}
          </Routes>
       </div>
    );
 }
 
 export default App;
+
+// useHistory - React Routin 36A, Lecture 1hr09min

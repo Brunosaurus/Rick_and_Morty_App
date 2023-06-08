@@ -13,8 +13,9 @@ export default function SearchBar(props) {
       props.onSearch(id)
    }
    return (
-         <div className={style.buscador}>            
-            <Link to='/'><button className={style.buttonHome} title='Home'>Home</button></Link>
+         <div className={style.buscador}>   
+            <button onClick={() => {props.logout()}}>logout</button>
+            <Link to='/home'><button className={style.buttonHome} title='Home'>Home</button></Link>
             <Link to='/About_Me'><button className={style.buttonAbout} title='About'>About</button></Link>
             <RanCard className={style.ranCard} props = {props}/>
             <input id='input1' className={style.searcher} type='text' onChange={handleChange}/>
